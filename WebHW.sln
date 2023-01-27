@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1500
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHW", "WebHW\WebHW.csproj", "{755D8A36-5290-461B-B3ED-892C4D98073A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_Layer", "DAL_Layer\DAL_Layer.csproj", "{A471E617-DD4C-431A-AA4F-9652DCC12816}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL_Layer", "BLL_Layer\BLL_Layer.csproj", "{02C1FE0D-FC8D-40B0-B906-48FE5A9BCC1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{755D8A36-5290-461B-B3ED-892C4D98073A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{755D8A36-5290-461B-B3ED-892C4D98073A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{755D8A36-5290-461B-B3ED-892C4D98073A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{755D8A36-5290-461B-B3ED-892C4D98073A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A471E617-DD4C-431A-AA4F-9652DCC12816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A471E617-DD4C-431A-AA4F-9652DCC12816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A471E617-DD4C-431A-AA4F-9652DCC12816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A471E617-DD4C-431A-AA4F-9652DCC12816}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C1FE0D-FC8D-40B0-B906-48FE5A9BCC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C1FE0D-FC8D-40B0-B906-48FE5A9BCC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C1FE0D-FC8D-40B0-B906-48FE5A9BCC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C1FE0D-FC8D-40B0-B906-48FE5A9BCC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD2DD45C-BD5E-4158-AB67-90C8CBF27484}
+	EndGlobalSection
+EndGlobal

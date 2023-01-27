@@ -1,0 +1,90 @@
+﻿@model WebHW.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/StyleSheet1.css")
+</head>
+<body>
+    <h2>Register as User</h2>
+    <div>
+        @using (Html.BeginForm("SignUp", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {  
+        <div class="center">
+            <label class="preview">Image Preview</label>
+            <img src="#" alt="preview" id="imagePreview" style="border: 1px solid; height: 169px; width: 175px; margin: auto; display: block; border-radius: 50%; background-color:gray;" />
+            <label class="preview">Your Profile Pic</label>
+            <input type="file" name="file" value="" onchange="return ShowImagePreview(this)" class="form-control" id="file" required />
+            @Html.ValidationMessageFor(model => model.file, "", new { @class = "text-danger" })
+        </div>
+        <form>
+            <fieldset>
+                <label class="l2">UserName:</label>
+                @Html.TextBoxFor(model => model.userName, new { @class = "inputBox", @placeholder = "User Name" })
+                @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
+            </fieldset>
+
+            <fieldset>
+                <label class="l2">Email Address:</label>
+                @Html.TextBoxFor(model => model.email, new { @class = "inputBox", @placeholder = "Email ID" })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                <br />
+            </fieldset>
+
+            <fieldset>
+                <label class="l2">Password:</label>
+                @Html.PasswordFor(model => model.password, new { @class = "inputBox", @placeholder = "Password" })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                <br />
+            </fieldset>
+
+            <fieldset>
+                <lable class="l2"><b>Confirm Password:</b></lable>
+                @Html.PasswordFor(model => model.confirmPass, new { @class = "inputBox", @placeholder = "PassWord" })
+                @Html.ValidationMessageFor(model => model.confirmPass, "", new { @class = "text-danger" })
+                <br />
+            </fieldset>
+
+            <button type="submit">Sign Up</button>
+        </form>
+       
+            
+        }
+    </div>
+    <script>
+        function ShowImagePreview(input) {
+            debugger;
+            if (input.files && input.files[0]) {
+                var fname = input.files[0].name;
+                var re = /(\.jpg|\.jpeg|\.bmp|\.gif|\.png)$/i;
+                if (!re.exec(fname)) {
+                    alert("Image not supported!");
+                    $("#fileupload").val("");
+
+                    return false;
+                }
+                else {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#imagePreview').prop('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

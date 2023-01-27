@@ -1,0 +1,30 @@
+﻿.l2 {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+
+.preview {
+    margin: auto;
+    display: block;
+}
+
+.center {
+    text-align: center;
+}
+
+.form-control{
+    text-align:center;
+    margin: auto;
+}
+
+
+.text-danger {
+    color: red;
+}
+
+button{
+    background-color:deepskyblue;
+    text-align:right;
+}
