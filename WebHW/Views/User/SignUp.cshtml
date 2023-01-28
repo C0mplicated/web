@@ -1,7 +1,7 @@
-﻿@model IEnumerable<WebHW.Models.Employee>
-
+﻿
+@model IEnumerable<DAL_Layer.Model.Employee>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "SignUp";
 }
 
 <h2>Index</h2>
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Job)
+            @Html.DisplayNameFor(model => model.JOB)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Salary)
@@ -30,15 +30,15 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Job)
+                @Html.DisplayFor(modelItem => item.JOB)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Salary)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.EmpId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.EmpId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.EMPID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EMPID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EMPID })
             </td>
         </tr>
     }

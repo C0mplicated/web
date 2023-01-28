@@ -8,7 +8,7 @@ using WebHW.Models;
 using BLL_Layer;
 using DAL_Layer;
 using System.Data;
-
+using DAL_Layer.Model;
 
 namespace WebHW.Controllers
 {
@@ -36,7 +36,7 @@ namespace WebHW.Controllers
                 //    user.file.SaveAs(path);
                 //    ViewBag.imageURL = path;
                 //}
-                List<Employee> employees = new List<Employee>();
+                /*List<Employee> employees = new List<Employee>();
                 BLL_LayerClass bll = new BLL_LayerClass();
                 DataSet ds = bll.GetEmployee_BLL();
 
@@ -59,8 +59,10 @@ namespace WebHW.Controllers
                         Salary = item.Salary,
                     };
                     employees.Add(emp);
-                }
-                return View(employees);
+                }*/
+                BLL_LayerClass bLL_LayerClass = new BLL_LayerClass();
+                var empList = bLL_LayerClass.GetEmployee_BLL();
+                return View("SignUp",empList);
             }
 
             return View("Index");
@@ -74,7 +76,7 @@ namespace WebHW.Controllers
         [HttpPost]
         public ActionResult Create(Employee employee)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 DAL_Layer.Models.Employee e = new DAL_Layer.Models.Employee();
                 e.Job = employee.Job;
@@ -82,8 +84,11 @@ namespace WebHW.Controllers
                 e.Salary = employee.Salary;
                 var result = new DAL_LayerClass().AddEmployee(e);
                 return RedirectToAction("Index");
-            }
-            return View("UserData");
+            }*/
+            BLL_LayerClass bLL_LayerClass = new BLL_LayerClass();
+            var res = bLL_LayerClass.AddEmployee_BLL(employee.Name,employee.JOB,employee.Salary);
+            var empList = bLL_LayerClass.GetEmployee_BLL();
+            return View("UserData",empList);
         }
     }
 }
